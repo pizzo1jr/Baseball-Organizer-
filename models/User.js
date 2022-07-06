@@ -3,7 +3,11 @@ const sequelize = require('../config/connection'); // get the connection to data
 const bcrypt = require('bcrypt');
 
 // create the User Model
-class User extends Model{};
+class User extends Model{
+   checkPassword(loginPw) {
+      return bcrypt.compareSync(loginPw, this.password);
+    } 
+};
 
 User.init(
    {
@@ -20,6 +24,10 @@ User.init(
       last_name: {
          type: DataTypes.STRING,
          allowNull: false
+      },
+      username:{
+         type: DataTypes.STRING,
+         allowNull: false,
       },
       email: {
          type: DataTypes.STRING,

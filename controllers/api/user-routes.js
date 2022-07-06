@@ -69,4 +69,31 @@ router.put('/:id', (req, res) => {
    });
 });
 
+// Routes to login the user into the site
+router.post('/login', (req, res) => {
+   User.findOne({
+      where:{
+         email:req.body.email
+      }
+   })
+   .then(dbUserData => {
+      if(!dbUserData){
+         res.status(400).json({message: 'Email does not match'});
+         return;
+      }
+
+      const response = dbUserData.checkPassword(req.body.password);
+      if (!response){
+         res.status(400).json({message: 'Password does not match'});
+         return;
+      }
+
+      res.json({message: `${dbUserData.first_name} have logged in!`});
+   })
+   .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+   });
+});
+
 module.exports = router;
