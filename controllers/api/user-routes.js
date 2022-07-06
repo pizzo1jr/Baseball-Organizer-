@@ -40,7 +40,13 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
    User.create(req.body)
    .then(dbUserData => {
-      res.json(dbUserData)
+      req.session.save(() => {
+         req.session.user_id = dbUserData.id;
+         req.session.username = dbUserData.username;
+         req.session.loggedIn = true;
+
+         res.json(dbUserData);
+      })
    })
    .catch(err => {
       console.log(err);
@@ -88,12 +94,30 @@ router.post('/login', (req, res) => {
          return;
       }
 
-      res.json({message: `${dbUserData.first_name} have logged in!`});
+      req.session.save(()=>{
+         req.session.user_id = dbUserData.id;
+         req.session.username = dbUserData.username;
+         req.session.loggedIn = true;
+
+         res.json({ user: dbUserData, message: 'You are now logged in!' });
+      })
    })
    .catch(err => {
       console.log(err);
       res.status(500).json(err);
    });
+});
+
+// logout users (destroy session)
+router.post('/logout', (req, res) => {
+   if (req.session.loggedIn){
+      req.session.destroy(() => {
+         res.status(204).end();
+      });
+      res.json({message: 'User logged out!'});
+   } else {
+      res.status(404).end();
+   }
 });
 
 module.exports = router;
