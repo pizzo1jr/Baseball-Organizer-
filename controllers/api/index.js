@@ -4,4 +4,6 @@ const router = require('express').Router();
 const userRoutes = require('./user-routes');
 
 // mount all the api route appropriately (e.g: mount user routes to '/user')
-router.use('/user', userRoutes);
+router.use('/users', userRoutes);
+
+module.exports = router;

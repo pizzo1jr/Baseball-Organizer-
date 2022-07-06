@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 
 // get all the routes
-const apiRoutes = require('./api/');
+const apiRoutes = require('./api');
 
 
 // mount the routes
