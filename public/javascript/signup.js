@@ -2,8 +2,8 @@ async function signUpFormHandler(event){
    event.preventDefault();
 
    // get the values from input
-   const first_name = document.querySelector('#first_name').value.trim();
-   const last_name = document.querySelector('#last_name').value.trim();
+   const first_name = document.querySelector('#first-name').value.trim();
+   const last_name = document.querySelector('#last-name').value.trim();
    const username = document.querySelector('#username').value.trim();
    const email = document.querySelector('#email').value.trim();
    const password = document.querySelector('#password').value.trim();
