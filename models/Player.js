@@ -15,6 +15,14 @@ Player.init(
          type: DataTypes.STRING,
          allowNullL: false
       },
+      team_id: {
+         type:DataTypes.INTEGER,
+         allowNull:false,
+         references: {
+            model:'team',
+            key:'id'
+         }
+      },
       bats: {
          type: DataTypes.STRING,
          allowNullL: false,
@@ -66,3 +74,5 @@ Player.init(
       underscored: true
    }
 );
+
+module.exports = Player;
