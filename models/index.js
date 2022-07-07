@@ -16,7 +16,7 @@ Team.belongsTo(User, {
 });
 
 // create association between teams and players
-Team.hasMany(Players, {
+Team.hasMany(Player, {
    foreignKey:'team_id'
 });
 

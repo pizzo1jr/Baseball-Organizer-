@@ -29,6 +29,44 @@ button:hover{
     color:#0a58ca;
 }
 
+/* login form style */
+.form-wrapper{
+    display: flex;
+    justify-content: center;
+    height:50vh;
+    align-items: center;
+}
+
+.form {
+    border: 2px dashed #FFFF;
+    border-radius: 10px;
+    background: #212529;
+    color: #FFFFFF;
+    padding: 2rem;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.form #email {
+    margin: 1.5rem;
+}
+
+.form input {
+    border-radius: 10px;
+    width: 22rem;
+}
+
+.submit-btn {
+    background: #FFFFFF;
+    color: #212529;
+    font-size: 30px;
+    padding: 0px 18px;
+    border-radius: 1rem;
+    display: block;
+    font-weight: 700;
+    margin: 10px auto;
+}
+
 .fixed {
     position: sticky;
 }
