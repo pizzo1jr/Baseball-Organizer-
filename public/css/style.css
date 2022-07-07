@@ -19,6 +19,16 @@ a {
     color:inherit;
 }
 
+/* reset button tag */
+button {
+    background-color: inherit;
+    color:inherit;
+    border:none;
+}
+button:hover{
+    color:#0a58ca;
+}
+
 .fixed {
     position: sticky;
 }
