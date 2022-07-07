@@ -11,8 +11,14 @@
    <header>
       <h1>Baseball</h1>
       <nav>
+         {{#if loggedIn}}
+         <a href="/">Home</a>
+         <a href="/dashboard">Dashboard</a>
+         <button class="btn-no-style logout-btn">Log out</button>
+         {{else}}
          <a href="/user/login">Log In</a>
          <a href="/user/signup">Sign Up</a>
+         {{/if}}
       </nav>
    </header>
 
@@ -21,4 +27,6 @@
    </main>
    
 </body>
+
+<script src='/javascript/logout.js'></script>
 </html>

@@ -3,7 +3,7 @@ const {User} = require('../models');
 
 // render the homepage
 router.get('/', (req, res) => {
-   res.render('homepage');
+   res.render('homepage', {loggedIn: req.session.loggedIn});
 });
 
 // render the log in page
