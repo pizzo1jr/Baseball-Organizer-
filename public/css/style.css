@@ -1,0 +1,25 @@
+/* body {
+    background-position: center;
+    background-image: url(../images/baseball\ field.jpg);
+    background-attachment: fixed; */
+
+/* make everything border-size and reset all styles */
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+/* rest all <a> anchore tags */
+a {
+    text-decoration: none;
+    color:inherit;
+}
+
+.fixed {
+    position: sticky;
+}
+
