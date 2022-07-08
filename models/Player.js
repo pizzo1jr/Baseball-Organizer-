@@ -50,27 +50,27 @@ Player.init(
          defaultValue: 0
       },
       earned_run_average: {
-         type: DataTypes.STRING,
+         type: DataTypes.DECIMAL,
          defaultValue:0
       },
       innings_pitched: {
-         type: DataTypes.STRING,
+         type: DataTypes.INTEGER,
          defaultValue:0
       },
       at_bats: {
-         type: DataTypes.STRING,
+         type: DataTypes.INTEGER,
          defaultValue:0
       },
       hits: {
-         type: DataTypes.STRING,
+         type: DataTypes.INTEGER,
          defaultValue:0
       },
       batting_average: {
-         type: DataTypes.STRING,
+         type: DataTypes.DECIMAL,
          defaultValue:0
       },
       runs_batted_in: {
-         type: DataTypes.STRING,
+         type: DataTypes.INTEGER,
          defaultValue:0
       }
    },
