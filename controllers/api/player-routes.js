@@ -82,4 +82,24 @@ router.put('/:id', (req, res) => {
    });
 });
 
+// delete a player
+router.delete('/:id', (req, res) => {
+   Player.destroy(req.body,{
+      where:{
+         id:req.params.id
+      }
+   })
+   .then(dbPlayerData => {
+      if(!dbPlayerData){
+         res.status(400).json({message: 'No Player with this id was found'});
+         return;
+      }
+      res.status(200).json(dbPlayerData);
+   })
+   .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+   });
+});
+
 module.exports = router;
