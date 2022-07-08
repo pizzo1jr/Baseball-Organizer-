@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const {User} = require('../../models');
+const sendingMail = require('../../utils/nodemailer');
 
 // get all the users
 router.get('/', (req, res) => {
@@ -119,5 +120,10 @@ router.post('/logout', (req, res) => {
       res.status(404).end();
    }
 });
+
+// forgot password
+router.post('/forgot-password', (req, res) => {
+   sendingMail(req.body.mail);
+})
 
 module.exports = router;

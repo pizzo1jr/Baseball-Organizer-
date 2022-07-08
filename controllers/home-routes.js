@@ -16,5 +16,10 @@ router.get('/user/signup', (req, res)=>{
    res.render('signup');
 });
 
+// render forgot password form
+router.get('/user/update-password', (req, res)=>{
+   res.render('update-password');
+})
+
 module.exports = router;
 
