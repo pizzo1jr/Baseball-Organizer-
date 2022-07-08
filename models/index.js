@@ -24,4 +24,13 @@ Player.belongsTo(Team, {
    foreginKey:'team_id'
 });
 
+// creaet association between players and user (coach)
+User.hasMany(Player, {
+   foreignKey: 'user_id'
+});
+
+Player.belongsTo(User, {
+   foreginKey:'user_id'
+});
+
 module.exports = {User, Team, Player}

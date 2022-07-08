@@ -17,9 +17,17 @@ Player.init(
       },
       team_id: {
          type:DataTypes.INTEGER,
-         allowNull:false,
+         allowNull: true,
          references: {
             model:'team',
+            key:'id'
+         }
+      },
+      user_id:{
+         type: DataTypes.INTEGER,
+         allowNull: false,
+         references: {
+            model:'user',
             key:'id'
          }
       },
