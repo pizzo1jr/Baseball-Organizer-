@@ -123,7 +123,7 @@ router.post('/logout', (req, res) => {
 
 // forgot password
 router.post('/forgot-password', (req, res) => {
-   sendingMail(req.body.mail);
-})
+   sendingMail(req.body.mail, req.body.auth_code);
+});
 
 module.exports = router;

@@ -1,4 +1,4 @@
-module.exports = (mail, id) => {
+module.exports = (mail, auth_code) => {
 
 const nodemailer = require('nodemailer');
 
@@ -14,7 +14,7 @@ const mailOptions = {
   from: 'adcosta2000@gmail.com',
   to: mail,
   subject: 'Change your password',
-  text: 'http://localhost:3001//user/update-password'
+  text: `Your Authentication code is ${auth_code}`
 };
 
 transporter.sendMail(mailOptions, function(error, info){

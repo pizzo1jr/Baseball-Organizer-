@@ -1,5 +1,3 @@
-const router = require("../../controllers/api/user-routes");
-
 async function loginFormHandler(event){
    event.preventDefault();
    
@@ -26,7 +24,6 @@ async function loginFormHandler(event){
    }
 
 };
-
 
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
 
