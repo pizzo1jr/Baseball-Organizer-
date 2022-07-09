@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const {User} = require('../../models');
 const sendingMail = require('../../utils/nodemailer');
+const generateAuthCode = require('../../utils/generateAuthCode');
 
 // get all the users
 router.get('/', (req, res) => {
@@ -121,10 +122,35 @@ router.post('/logout', (req, res) => {
    }
 });
 
-// forgot password
-router.post('/forgot-password', (req, res) => {
-   sendingMail(req.body.mail, req.body.auth_code);
-   res.status(200).json({message: 'An email was sent with instructions on restting your password'});
+
+// forgot password step 1: send auth_code with email to the user
+router.post('/forgot-password' ,(req, res) => {
+   const generated_auth_code = generateAuthCode();
+   User.update(
+      {
+         auth_code: generated_auth_code
+      },
+      {
+         where:{
+            email: req.body.email
+         }
+      }
+   )
+   .then(dbUserData => {
+      if(!dbUserData){
+         res.status(400).json({message: "This email was not found in our databse"});
+         return;
+      }
+      req.session.forgotPassword = true;
+      sendingMail(req.body.email, generated_auth_code);
+      res.status(200).json({message:"email was sent"});
+   })
+   .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+   });
 });
+
+
 
 module.exports = router;

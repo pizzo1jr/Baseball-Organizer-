@@ -43,6 +43,11 @@ User.init(
          validate: {
             len:[4]
          }
+      },
+      auth_code:{
+         type:DataTypes.STRING,
+         allowNull: false,
+         defaultValue: ""
       }
    },
    {

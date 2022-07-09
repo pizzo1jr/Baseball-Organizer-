@@ -1,21 +1,12 @@
-function generateAuthCode(){
-   let auth_code = '';
-   for(let i=0;i<4;i++){
-      auth_code += Math.floor(Math.random()*9);
-   }
-   return auth_code;
-};
-
 async function forgotPassHandler(event) {
    event.preventDefault();
-   const mail = document.querySelector('#forgot-pass-email').value.trim();
-   const auth_code = generateAuthCode();
-   if (mail){
-      const response = await fetch('/api/users/forgot-password', {
+   const email = document.querySelector('#forgot-pass-email').value.trim();
+   
+   if (email){
+      const response = await fetch(`/api/users/forgot-password`, {
          method:'POST',
-         body:JSON.stringify({
-            mail,
-            auth_code
+         body: JSON.stringify({
+            email
          }),
          headers:{'Content-Type':'application/json'}
       });

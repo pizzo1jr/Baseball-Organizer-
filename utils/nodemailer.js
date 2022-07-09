@@ -1,4 +1,4 @@
-module.exports = (mail, auth_code) => {
+module.exports = (mail, auth_code, url) => {
 
 const nodemailer = require('nodemailer');
 

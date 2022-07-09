@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const {User} = require('../models');
 
+
 // render the homepage
 router.get('/', (req, res) => {
    res.render('homepage', {loggedIn: req.session.loggedIn});
@@ -17,7 +18,7 @@ router.get('/user/signup', (req, res)=>{
 });
 
 // render forgot password form
-router.get('/user/update-password', (req, res)=>{
+router.get('/user/update-password',(req, res)=>{
    res.render('update-password');
 })
 
