@@ -124,6 +124,7 @@ router.post('/logout', (req, res) => {
 // forgot password
 router.post('/forgot-password', (req, res) => {
    sendingMail(req.body.mail, req.body.auth_code);
+   res.status(200).json({message: 'An email was sent with instructions on restting your password'});
 });
 
 module.exports = router;
