@@ -138,7 +138,7 @@ router.post('/forgot-password' ,(req, res) => {
    )
    .then(dbUserData => {
       if(!dbUserData){
-         res.status(400).json({message: "This email was not found in our databse"});
+         res.status(400).json({message: "This email was not found in our database"});
          return;
       }
       req.session.forgotPassword = true;
@@ -151,6 +151,27 @@ router.post('/forgot-password' ,(req, res) => {
    });
 });
 
+// password reset 2nd route
+router.post('/update-password', (req, res) => {
+   User.update({password:req.body.password, auth_code:""}, {
+      where:{
+         auth_code: req.body.auth_code
+      },
+      individualHooks: true
+   })
+   .then(dbUserData => {
+      if(!dbUserData){
+         res.status(400).json({message: "Invalid Authentication Code"});
+         return;
+      }
+      
+      res.json(dbUserData);
+   })
+   .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+   });
+});
 
 
 module.exports = router;

@@ -12,7 +12,8 @@ async function forgotPassHandler(event) {
       });
       
       if (response.ok){
-         alert('An email was sent with a secure link to update your password')
+         alert('An email was sent with a secure link to update your password');
+         document.location.replace('/user/update-password')
       } else {
          alert(response.statusText);
       }
