@@ -67,6 +67,13 @@ button:hover{
     margin: 10px auto;
 }
 
+/* dashboard styling */
+.dashboard{
+    border:2px solid black;
+}
+
+
+/* utilities */
 .fixed {
     position: sticky;
 }
