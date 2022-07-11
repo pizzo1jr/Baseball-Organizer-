@@ -52,6 +52,7 @@ router.get('/:id', (req, res) => {
    });
 });
 
+// create a player
 router.post('/', (req, res) => {
    Player.create(req.body)
    .then(dbPlayerData => {
@@ -63,6 +64,7 @@ router.post('/', (req, res) => {
    });
 });
 
+// edit a player information
 router.put('/:id', (req, res) => {
    Player.update(req.body,{
       where:{

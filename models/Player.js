@@ -11,7 +11,7 @@ Player.init(
          allowNull: false,
          primaryKey: true
       },
-      name: {
+      player_name: {
          type: DataTypes.STRING,
          allowNullL: false
       },
@@ -31,6 +31,11 @@ Player.init(
             key:'id'
          }
       },
+      position:{
+         type: DataTypes.STRING,
+         allowNull: false
+      },
+
       bats: {
          type: DataTypes.STRING,
          allowNullL: false,

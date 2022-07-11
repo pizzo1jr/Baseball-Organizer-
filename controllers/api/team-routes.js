@@ -1,14 +1,20 @@
 const router = require('express').Router();
-const {User, Team} = require('../../models');
+const {User, Team, Player} = require('../../models');
 
 // get all teams and their users (coach)
 router.get('/', (req, res) => {
    Team.findAll({
       attributes:['id','team_name','user_id','created_at'],
-      include:{
+      include:[
+         {
          model:User,
          attributes:['username']
-      }
+        },
+        {
+         model:Player,
+         attributes:['player_name', 'position', 'bats', 'throws']
+        }
+      ]
    })
    .then(dbTeamData => {
       res.status(200).json(dbTeamData);
@@ -26,10 +32,16 @@ router.get('/:id', (req, res) => {
          id:req.params.id
       },
       attributes:['id','team_name','user_id','created_at'],
-      include:{
+      include:[
+         {
          model:User,
          attributes:['username']
-      }
+        },
+        {
+         model:Player,
+         attributes:['player_name', 'position', 'bats', 'throws']
+        }
+      ]
    })
    .then(dbTeamData => {
       if(!dbTeamData){
@@ -84,12 +96,24 @@ router.post('/', (req, res) => {
    });
 });
 
+// DELETE a team 
 router.delete('/:id', (req, res) => {
    Team.destroy({
       where:{
          id: req.params.id
       }
    })
+   .then(dbTeamData => {
+      if(!dbTeamData){
+         res.status(400).json({message: 'No team with this id is found'});
+         return;
+      }
+      res.json(dbTeamData);
+   })
+   .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+   });
 })
 
 module.exports = router;
