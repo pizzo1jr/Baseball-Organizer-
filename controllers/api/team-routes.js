@@ -105,7 +105,7 @@ router.delete('/:id', (req, res) => {
    })
    .then(dbTeamData => {
       if(!dbTeamData){
-         res.status(400).json({message: 'No team with this id is found'});
+         res.status(400).json({message: 'No team with this id was found'});
          return;
       }
       res.json(dbTeamData);
