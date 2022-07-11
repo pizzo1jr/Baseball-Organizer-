@@ -17,7 +17,7 @@ async function updatePassFormHandler(event){
       if(response.ok){
          document.location.replace('/user/login');
       } else {
-         alert(response.responseText);
+         alert(response.statusText);
       }
    }
 

@@ -164,8 +164,7 @@ router.post('/update-password', (req, res) => {
          res.status(400).json({message: "Invalid Authentication Code"});
          return;
       }
-      
-      res.json(dbUserData);
+      res.status(200).json(dbUserData);
    })
    .catch(err => {
       console.log(err);
