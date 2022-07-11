@@ -72,6 +72,13 @@ button:hover{
     border:2px solid black;
 }
 
+.badge{
+    background-color: #0d6efd;
+}
+.badge:hover{
+    color: #FFF;
+}
+
 
 /* utilities */
 .fixed {
