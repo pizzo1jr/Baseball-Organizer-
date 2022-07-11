@@ -10,7 +10,10 @@ router.get('/', (req, res) => {
          {
             model:Team,
             attributes:['team_name']
-         }
+         },
+         {
+            model:Player
+         }         
       ]
    })
    .then(dbUserData => {

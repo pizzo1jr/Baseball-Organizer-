@@ -18,7 +18,11 @@ a {
     text-decoration: none;
     color:inherit;
 }
-
+/* reset all <li> list tags */
+li{
+    list-style-type:none;
+    margin:0;
+}
 /* reset button tag */
 button {
     background-color: inherit;
@@ -77,6 +81,24 @@ button:hover{
 }
 .badge:hover{
     color: #FFF;
+}
+
+.dashboard-player-group{
+    display:flex;
+    flex-wrap:wrap;
+    padding: 1rem 0.5rem;
+    gap:25px;
+}
+
+.player-card{
+    display: flex;
+    flex-direction: row wrap;
+    gap:25px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    padding:10px;
+    align-items: center;
+    margin-bottom:1rem;
 }
 
 

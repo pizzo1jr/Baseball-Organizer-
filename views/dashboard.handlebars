@@ -11,13 +11,26 @@
             {{/each}}
          </ul>
       </section>
-      <section class="col col-lg-8 dashboard-players  dashboard">
+      <section class="col col-lg-10 dashboard-players  dashboard">
          <h3>My Players</h3>
+         <ul class="dashboard-player-group">
+            {{#each user.players}}
+            <li class="player-card">
+               <img class="player-card-img" src="images/placeholder.svg" alt="card image cap">
+               <div class="player-card-body">
+                  <h5 class="player-card-title">J{{this.player_name}}</h5>
+                  <p class="player-card-text">Bats: {{this.bats}} | Throws: {{this.throws}}</p>
+                  <p class="player-card-text">Position: {{this.position}}</p>
+                  <a href="#" class="btn btn-primary">Show Stats</a>
+               </div>
+            </li>
+            {{/each}}
+         </ul>
       </section>
-      <section class="col col-lg-2 dashboard-create  dashboard">
+      {{!-- <section class="col col-lg-1 dashboard-create  dashboard">
          <button>Create a Team</button>
          <button>Create a Player</button>
-      </section>
+      </section> --}}
    </section>
    
 </section>
