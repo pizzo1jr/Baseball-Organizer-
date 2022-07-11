@@ -12,7 +12,8 @@ router.get('/', (req, res) => {
             attributes:['team_name']
          },
          {
-            model:Player
+            model:Player,
+            attributes:['player_name','position','bats','throws']
          }         
       ]
    })
@@ -20,6 +21,11 @@ router.get('/', (req, res) => {
       const user = dbUserData.get({plain: true});
       res.render('dashboard', {user});
    })
+});
+
+router.get('/create-team', (req, res) => {
+   res.render('create-team');
+   
 })
 
 module.exports = router;

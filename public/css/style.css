@@ -101,6 +101,19 @@ button:hover{
     margin-bottom:1rem;
 }
 
+.dashboard-title{
+    background-color: #212529;
+    color:#FFF;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.dashboard-btn {
+    margin:10px;
+}
 
 /* utilities */
 .fixed {

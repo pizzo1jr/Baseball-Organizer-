@@ -1,7 +1,7 @@
 <section class="container">
    <section class="row dashboard-wrapper">
       <section class="col col-lg-2 dashboard-teams dashboard">
-         <h3>My Teams</h3>
+         <h3 class="dashboard-title">Teams</h3>
          <ul class="dashboard-team-group list-group">
             {{#each user.teams}}
             <li class="team list-group-item d-flex justify-content-between align-items-center">
@@ -10,15 +10,17 @@
             </li>
             {{/each}}
          </ul>
+         <a href="/dashboard/create-team" class="dashboard-btn btn btn-primary btn-lg btn-block">Create Team</a>
       </section>
+
       <section class="col col-lg-10 dashboard-players  dashboard">
-         <h3>My Players</h3>
+         <h3 class="dashboard-title">My Players</h3>
          <ul class="dashboard-player-group">
             {{#each user.players}}
             <li class="player-card">
                <img class="player-card-img" src="images/placeholder.svg" alt="card image cap">
                <div class="player-card-body">
-                  <h5 class="player-card-title">J{{this.player_name}}</h5>
+                  <h5 class="player-card-title">{{this.player_name}}</h5>
                   <p class="player-card-text">Bats: {{this.bats}} | Throws: {{this.throws}}</p>
                   <p class="player-card-text">Position: {{this.position}}</p>
                   <a href="#" class="btn btn-primary">Show Stats</a>
