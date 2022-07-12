@@ -201,6 +201,17 @@ button:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 } */
 
+/* create a new player page */
+.create-player-title{
+    background-color: #212529;
+    color: #FFF;
+    font-size: 2rem;
+    text-align: center;
+    width:86%;
+    margin:auto;
+    padding:4px;
+}
+
 /* utilities */
 .fixed {
     position: sticky;

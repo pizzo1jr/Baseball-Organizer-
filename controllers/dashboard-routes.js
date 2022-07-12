@@ -89,6 +89,11 @@ router.get('/single-player/:id', (req, res) => {
       const player = dbPlayerData.get({plain:true});
       res.render('singlePlayer', {player, loggedIn: req.session.loggedIn});
    })
-})
+});
+
+// creating a new player route
+router.get('/create-player', (req, res) => {
+   res.render('createPlayer', {loggedIn: req.session.loggedIn});
+});
 
 module.exports = router;
