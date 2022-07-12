@@ -153,6 +153,17 @@ button:hover{
     overflow:scroll;
 }
 
+/* Editing the players in edit-team file */
+.edit-team-title{
+    background-color: #212529;
+    color:#FFF;
+    text-align:center
+}
+
+.edit-team-players-title{
+    color:#212529;
+    text-align: center;
+}
 
 /* utilities */
 .fixed {

@@ -29,7 +29,7 @@ router.get('/create-team', (req, res) => {
    
 });
 
-router.get('/edit-team/:id', (req, res) => {
+router.get('/add-team/:id', (req, res) => {
    Player.findAll({
       where:{
          user_id:req.session.user_id,
@@ -39,12 +39,32 @@ router.get('/edit-team/:id', (req, res) => {
    })
    .then(dbUserData => {
       const players = dbUserData.map(player => player.get({plain:true}));
-      res.render('edit-team', {players, loggedIn:req.session.loggedIn});
+      res.render('add-team', {players, loggedIn:req.session.loggedIn});
    })
    .catch(err => {
       console.log(err);
       res.status(500).json(err);
    });
+});
+
+router.get('/edit-team/:id', (req, res) => {
+   Team.findOne({
+      where:{
+         id:req.params.id
+      },
+      include:{
+         model:Player,
+         attributes:['id','player_name','position','bats','throws']
+      }
+   })
+   .then(dbTeamData => {
+      const team = dbTeamData.get({plain:true});
+      res.render('edit-team', {team, loggedIn: req.session.loggedIn});
+   })
+   .catch(err => {
+      console.log(err);
+      res.json(err);
+   })
 });
 
 module.exports = router;

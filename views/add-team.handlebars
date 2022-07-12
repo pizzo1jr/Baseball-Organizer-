@@ -1,10 +1,7 @@
-<h1 class="edit-team-title">{{team.team_name}}</h1>
-
-<h3 class="edit-team-players-title">Current Players in this team</h3>
 <form class="col col-lg-12 edit-team-players dashboard">
-   <h3 class="dashboard-title">Click on the Players to remove them from the team</h3>
+   <h3 class="dashboard-title">Click on the Players to add them in the team</h3>
    <ul class="dashboard-player-group">
-      {{#each team.players}}
+      {{#each this.players}}
       <li class="player-card">
          
          <input id="select-players" type="checkbox" value="{{this.id}}" name="select-players"/>
@@ -22,4 +19,4 @@
    <button type='submit' class="add-players-btn btn btn-outline-dark"> Add Players </button>
 </form> 
 
-<script src="/javascript/edit-team.js"></script>
+<script src="/javascript/add-team.js"></script>
