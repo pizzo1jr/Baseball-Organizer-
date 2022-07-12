@@ -1,0 +1,27 @@
+<h1 class="dashboard-title">Create Your Team Here</h1>
+
+<section class="form-wrapper">
+   <form class="create-team-form">
+      <label class="team_name_label" for="team-name">Get Started by Entering the team name here</label>
+      <input class="team_name_input"  type="text" placeholder="Team Name" id="team_name" for="team_name">
+      <button type="submit" class="btn btn-outline-dark team-name-btn">Create Team</button>
+   </form>
+</section>
+
+{{!-- player section --}}
+<section class="col col-lg-12 create-team-players dashboard">
+         <h3 class="dashboard-title">My Players</h3>
+         <ul class="dashboard-player-group">
+            {{#each this.players}}
+            <li class="player-card">
+               <img class="player-card-img" src="/images/placeholder.svg" alt="card image cap">
+               <div class="player-card-body">
+                  <h5 class="player-card-title">{{this.player_name}}</h5>
+                  <p class="player-card-text">Bats: {{this.bats}} | Throws: {{this.throws}}</p>
+                  <p class="player-card-text">Position: {{this.position}}</p>
+                  <a href="#" class="btn btn-primary">Show Stats</a>
+               </div>
+            </li>
+            {{/each}}
+         </ul>
+      </section>
