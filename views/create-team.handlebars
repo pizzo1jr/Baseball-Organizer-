@@ -5,15 +5,19 @@
       <label class="team_name_label" for="team-name">Get Started by Entering the team name here</label>
       <input class="team_name_input"  type="text" placeholder="Team Name" id="team_name" for="team_name">
       <button type="submit" class="btn btn-outline-dark team-name-btn">Create Team</button>
+
    </form>
 </section>
 
-{{!-- player section --}}
+{{!-- player section
 <section class="col col-lg-12 create-team-players dashboard">
-         <h3 class="dashboard-title">My Players</h3>
+         <h3 class="dashboard-title">Click on the Players to add them in the team</h3>
          <ul class="dashboard-player-group">
             {{#each this.players}}
             <li class="player-card">
+               
+               <input class="select-player" id="{{this.id}}" type="checkbox" value="{{this.id}}" name="{{this.id}}"/>
+
                <img class="player-card-img" src="/images/placeholder.svg" alt="card image cap">
                <div class="player-card-body">
                   <h5 class="player-card-title">{{this.player_name}}</h5>
@@ -24,4 +28,6 @@
             </li>
             {{/each}}
          </ul>
-      </section>
+      </section> --}}
+
+<script src="/javascript/create-team.js"></script>

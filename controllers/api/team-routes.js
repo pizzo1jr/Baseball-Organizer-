@@ -85,7 +85,7 @@ router.put('/:id', (req, res) => {
 router.post('/', (req, res) => {
    Team.create({
       team_name: req.body.team_name,
-      user_id: req.body.user_id // will update to req.session.id
+      user_id: req.session.user_id // will update to req.session.id
    })
    .then(dbTeamData => {
       res.status(200).json(dbTeamData);
