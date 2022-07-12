@@ -144,7 +144,7 @@ button:hover{
     margin:auto;
 }
 
-.create-team-players .dashboard-player-group{
+.edit-team-players .dashboard-player-group{
     display:flex;
     flex-wrap:wrap;
     padding: 1rem 0.5rem;

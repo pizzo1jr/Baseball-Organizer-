@@ -6,7 +6,7 @@
             {{#each user.teams}}
             <li class="team list-group-item d-flex justify-content-between align-items-center">
                {{this.team_name}}
-               <a href="#" class="badge badge-light">Edit</a>
+               <a href='dashboard/edit-team/{{this.id}}' class="badge badge-light">Edit</a>
             </li>
             {{/each}}
          </ul>

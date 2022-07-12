@@ -11,23 +11,23 @@
 
 {{!-- player section
 <section class="col col-lg-12 create-team-players dashboard">
-         <h3 class="dashboard-title">Click on the Players to add them in the team</h3>
-         <ul class="dashboard-player-group">
-            {{#each this.players}}
-            <li class="player-card">
-               
-               <input class="select-player" id="{{this.id}}" type="checkbox" value="{{this.id}}" name="{{this.id}}"/>
+   <h3 class="dashboard-title">Click on the Players to add them in the team</h3>
+   <ul class="dashboard-player-group">
+      {{#each this.players}}
+      <li class="player-card">
+         
+         <input class="select-player" id="{{this.id}}" type="checkbox" value="{{this.id}}" name="{{this.id}}"/>
 
-               <img class="player-card-img" src="/images/placeholder.svg" alt="card image cap">
-               <div class="player-card-body">
-                  <h5 class="player-card-title">{{this.player_name}}</h5>
-                  <p class="player-card-text">Bats: {{this.bats}} | Throws: {{this.throws}}</p>
-                  <p class="player-card-text">Position: {{this.position}}</p>
-                  <a href="#" class="btn btn-primary">Show Stats</a>
-               </div>
-            </li>
-            {{/each}}
-         </ul>
-      </section> --}}
+         <img class="player-card-img" src="/images/placeholder.svg" alt="card image cap">
+         <div class="player-card-body">
+            <h5 class="player-card-title">{{this.player_name}}</h5>
+            <p class="player-card-text">Bats: {{this.bats}} | Throws: {{this.throws}}</p>
+            <p class="player-card-text">Position: {{this.position}}</p>
+            <a href="#" class="btn btn-primary">Show Stats</a>
+         </div>
+      </li>
+      {{/each}}
+   </ul>
+</section> --}}
 
 <script src="/javascript/create-team.js"></script>

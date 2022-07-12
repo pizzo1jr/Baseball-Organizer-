@@ -21,7 +21,8 @@ Player.init(
          references: {
             model:'team',
             key:'id'
-         }
+         },
+         defaultValue:null
       },
       user_id:{
          type: DataTypes.INTEGER,

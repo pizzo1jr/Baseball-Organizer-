@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
       include:[
          {
             model:Team,
-            attributes:['team_name']
+            attributes:['team_name','id']
          },
          {
             model:Player,
@@ -24,15 +24,22 @@ router.get('/', (req, res) => {
 });
 
 router.get('/create-team', (req, res) => {
+   
+   res.render('create-team', {loggedIn: req.session.loggedIn});
+   
+});
+
+router.get('/edit-team/:id', (req, res) => {
    Player.findAll({
       where:{
-         user_id:req.session.user_id
+         user_id:req.session.user_id,
+         team_id:null
       },
       attributes: ['id','player_name','position','bats','throws']
    })
    .then(dbUserData => {
       const players = dbUserData.map(player => player.get({plain:true}));
-      res.render('create-team', {players, loggedIn:req.session.loggedIn});
+      res.render('edit-team', {players, loggedIn:req.session.loggedIn});
    })
    .catch(err => {
       console.log(err);
