@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
          },
          {
             model:Player,
-            attributes:['player_name','position','bats','throws']
+            attributes:['id','player_name','position','bats','throws']
          }         
       ]
    })
@@ -66,5 +66,29 @@ router.get('/edit-team/:id', (req, res) => {
       res.json(err);
    })
 });
+
+// single player status page
+
+router.get('/single-player/:id', (req, res) => {
+   Player.findOne({
+      where:{
+         id:req.params.id
+      },
+      include: [
+         {
+            model:Team,
+            attributes:['id', 'team_name']
+         },
+         {
+            model:User,
+            attributes:['id', 'first_name']
+         }
+      ]
+   })
+   .then(dbPlayerData => {
+      const player = dbPlayerData.get({plain:true});
+      res.render('singlePlayer', {player, loggedIn: req.session.loggedIn});
+   })
+})
 
 module.exports = router;

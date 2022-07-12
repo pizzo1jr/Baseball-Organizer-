@@ -165,10 +165,49 @@ button:hover{
     text-align: center;
 }
 
+/* single post player stats */
+
+.basic-player-info{
+    justify-content: center;
+}
+
+.basic-player-info > ul{
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.section-title{
+    text-align:center;
+    background-color: #212529;
+    color:#FFF;
+    font-size:1.5rem;
+}
+
+.list-group > li{
+    text-align: center;
+}
+
+.stat-value{
+    background-color: #0a58ca;
+    border-radius: 5px;
+    padding:2px;
+    color:#FFF;
+}
+
+/* .stat-group{
+    font-size:1.5rem;
+    border-radius:10px;
+    padding:10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+} */
+
 /* utilities */
 .fixed {
     position: sticky;
 }
 
-
+.add-players-btn{
+    display:block;
+    margin:auto;
+}
 

@@ -1,0 +1,36 @@
+<section class="basic-player-info player-card">
+   <img src="/images/placeholder.svg" alt="palceholder img">
+   <ul>
+      <li>{{player.player_name}}</li>
+      {{#if player.team}}
+      <li>Team: None</li>
+      {{else}}
+      <li>Team: {{player.team}}</li>
+      {{/if}}
+   </ul>
+</section>
+
+<section class="advance-player-info">
+   <ul class="list-group">
+      <div class="section-title">Basic Stats</div>
+      <li class="list-group-item">Position: <span class="stat-value">{{player.position}}</span></li>
+      <li class="list-group-item">Throws: {{player.throws}}</li>
+      <li class="list-group-item">Bats: {{player.bats}}</li>
+   </ul>
+
+   <ul class="list-group">
+      <div class="section-title">Pitching Stats</div>
+      <li class="list-group-item">Strike Outs: {{player.strike_outs}}</li>
+      <li class="list-group-item">Batters Walked: {{player.batters_walked}}</li>
+      <li class="list-group-item">Innings Pitched: {{player.innings_pitched}}</li>
+      <li class="list-group-item">Earned Run Average: {{player.earned_run_average}}</li>
+   </ul>
+
+   <ul class="list-group">
+      <div class="section-title">Batting Stats</div>
+      <li class="list-group-item">At Bats: {{player.at_bats}}</li>
+      <li class="list-group-item">Hits: {{player.hits}}</li>
+      <li class="list-group-item">Runs Batted in: {{player.runs_batted_in}}</li>
+      <li class="list-group-item">Batting Average: {{player.batting_average}}</li>
+   </ul>
+</section>

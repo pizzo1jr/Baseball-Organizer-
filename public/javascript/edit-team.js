@@ -19,10 +19,8 @@ async function editTeamPlayerFormHandler(event){
             }),
             headers:{'Content-Type':'application/json'}
          })
-         if(!response.ok){
-            alert(response.statusText);
-         }
       }
+      alert('Players removed');
       document.location.reload();
    }
 };
