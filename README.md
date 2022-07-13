@@ -36,7 +36,29 @@ The app will be hosted by heroku in the future. For now, the app can be installe
 - The server should start once the the command is run.
 
 ## Usage
-Once the server is initiated, the user is present with the home-page. The user can sign up or log in by using the links in the navigation bar.  
-Once logged in, the user is presented with their dashboard:
-![dashboard](./finished-images/dashboard.PNG)  
+Once the server is initiated, the user is present with the home-page. The user can sign up or log in by using the links in the navigation bar. If the user forgets their password, they can recover it by typing in their email and pressing forgot password.
+log in page:  
+
+![login](./finished-images/login.PNG)
+
+Once logged in, the user is presented with their dashboard: 
+
+![dashboard](./finished-images/user-dashboard.PNG)  
+
+The teams and the players created by that user will be shown to the user. The players are going to be shown in a card with their image basic stat.  
+The user will be presented with two buttons 'create team' and 'Create Player' to create teams and players respectivley.  
+If create team button is clicked, the user will be presented with create team form. They have to enter a name and submit.  
+
+![create-team](./finished-images/create-team.PNG)  
+
+If create player button is pressed, then the following form is produced for the user to submit:  
+
+![create-player](./finished-images/add-player.PNG)
+
+once the user fills up the form and submits it, the player is created for the user. 
+
+The user can view the detailed stats of a player by clicking on the 'Show Stats' button on the player card as shown in the following image:  
+
+![player-stat](./finished-images/player-stat.PNG)
+
 
