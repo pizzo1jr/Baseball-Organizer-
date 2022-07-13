@@ -54,6 +54,7 @@ router.get('/:id', (req, res) => {
 
 // create a player
 router.post('/', (req, res) => {
+   req.body.user_id = req.session.user_id;
    Player.create(req.body)
    .then(dbPlayerData => {
       res.status(200).json(dbPlayerData);

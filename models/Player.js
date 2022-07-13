@@ -40,15 +40,15 @@ Player.init(
       bats: {
          type: DataTypes.STRING,
          allowNullL: false,
-         defaultValue: "right"
+         defaultValue: "Right"
       },
       throws: {
          type: DataTypes.STRING,
          allowNullL: false,
-         defaultValue:"right"
+         defaultValue:"Right"
       },
       strike_outs: { // strike default value is set to zero or it will be null. The user can leave it blank if they player did not pitch.
-         type: DataTypes.STRING,
+         type: DataTypes.INTEGER,
          defaultValue: 0
       },
       batters_walked: {
