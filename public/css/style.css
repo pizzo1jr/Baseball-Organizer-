@@ -1,9 +1,3 @@
-/* body {
-    background-position: center;
-    background-image: url(../images/baseball\ field.jpg);
-    background-attachment: fixed; */
-
-/* make everything border-size and reset all styles */
 
 *{
     -webkit-box-sizing: border-box;
@@ -35,7 +29,7 @@ button:hover{
 
 /* login form style */
 .form-wrapper{
-    margin-top:1rem;
+    margin-top:10rem;
     display: flex;
     justify-content: center;
     align-items: center;
