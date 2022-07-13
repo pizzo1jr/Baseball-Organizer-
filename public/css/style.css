@@ -107,6 +107,10 @@ button:hover{
     padding-bottom:10px;
 }
 
+.create-team-title{
+    margin-top:10rem;
+}
+
 .dashboard-btn {
     margin: 10px auto 10px auto;
     display: block;
@@ -152,6 +156,16 @@ button:hover{
     gap:13px;
     justify-content: center;
     overflow:scroll;
+}
+
+.form-submit-message {
+    color: white;
+    text-align: center;
+    margin: 1.5rem auto 0 auto;
+    font-size: 1.5rem;
+    background: #DC3545;
+    width: 42%;
+    border-radius: 2rem;
 }
 
 /* Editing the players in edit-team file */

@@ -1,3 +1,5 @@
+const formSubmitMessage = document.querySelector('.form-submit-message');
+
 async function createTeamFormHandler(event){
    event.preventDefault()
    const team_name = document.querySelector("#team_name").value.trim();
@@ -11,7 +13,13 @@ async function createTeamFormHandler(event){
          headers:{'Content-Type':'application/json'}
       })
       if(response.ok){
-         alert(`${team_name} Created`);
+         if(document.getElementById('message')){
+            document.getElementById('message').remove();
+         }
+         let message = document.createElement('p');
+         message.setAttribute('id','message')  
+         message.textContent = `${team_name} was created. Check it out in the Dashboard!`;
+         formSubmitMessage.appendChild(message);
       } else {
          alert(response.statusText);
       }
