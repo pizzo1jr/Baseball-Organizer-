@@ -1,42 +1,72 @@
 <h1 class="create-player-title">Create a New Player</h1>
 
-<form class="create-player-form">
-  <div class="row basic-info">
-    <div class="col col-lg-4">
-      <input type="text" class="form-control" placeholder="First name">
-    </div>
-    <div class="col col-lg-4">
-      <input type="text" class="form-control" placeholder="Last name">
-    </div>
-  </div>
-  <div class="row basic-info">
-      <select class="custom-select mr-sm-2 col col-lg-4" id="inlineFormCustomSelect">
-         <option selected>Position...</option>
-         <option value="C">Catcher</option>
-         <option value="1B">1st Base</option>
-         <option value="2B">2nd Base</option>
-         <option value="3B">3rd Base</option>
-         <option value="SS">Short Stop</option>
-         <option value="CF">Center Field</option>
-         <option value="RF">Right Field</option>
-         <option value="LF">Left Field</option>
-         <option value="P">Pitcher</option>
-      </select>
-      <div class="col col-lg-4">
-         <span>Bats:</span>
-         <label for="left">Left</label>
-         <input type="radio" id="left" value="left">
-         <label for="right">Right</label>
-         <input type="radio" id="right" value="right">
 
-         <span>Throws:</span>
-         <label for="left">Left</label>
-         <input type="radio" id="left" value="left">
-         <label for="right">Right</label>
-         <input type="radio" id="right" value="right">
-      </div>
+<div class="form-wrapper">
+  <form class="create-player-form form">
+  <div class="create-text-input">
+    <input id="first_name" type="text" placeholder="First Name">
   </div>
+  <div class="create-text-input">
+    <input id="last_name" type="text" placeholder="Last Name">
+  </div>
+  <div class="create-select-input">
+    <label for="position">Player Position:</label>
+    <select name="postion" id="position">
+      <option value="C">Catcher</option>
+      <option value="P">Pitcher</option>
+      <option value="1B">First Base</option>
+      <option value="2B">Second Base</option>
+      <option value="3B">Third Base</option>
+      <option value="RF">Right Field</option>
+      <option value="CF">Center Field</option>
+      <option value="LF">Left Field</option>
+    </select>
+  </div>
+  <div class="create-radio-input">
+    <p>Batting Position:</p>
+    <input type="radio" value="Left" id="bats_left">
+    <label for="left">Left</label>
+    <input type="radio" value="Right" id="bats_right">
+    <label for="right">Right</label>
+  </div>
+   <div class="create-radio-input">
+    <p>Throwing Side:</p>
+    <input type="radio" value="Left" id="throws_left">
+    <label for="left">Left</label>
+    <input type="radio" value="Right" id="throws_right">
+    <label for="right">Right</label>
+  </div>
+  <p class="create-instruction">Pitching Stats (Leave empty if the player is not a pitcher)</p>
+  <div class="create-text-input">
+    <input type="text" placeholder="Strike Outs" id="strike_outs">
+  </div>
+  <div class="create-text-input">
+    <input type="text" placeholder="Batters Walked" id="batters_walked">
+  </div>
+  <div class="create-text-input">
+    <input type="text" placeholder="Innings Pitched" id="innings_pitched">
+  </div>
+  <div>
+    <input type="text" placeholder="Earned Run Average" id="earned_run_average">
+  </div>
+  <p class="create-instruction">Batting Stats</p>
+  <div class="create-text-input">
+    <input type="text" placeholder="At Bats" id="at_bats">
+  </div>
+  <div class="create-text-input">
+    <input type="text" placeholder="Hits" id="hits">
+  </div>
+  <div class="create-text-input">
+    <input type="text" placeholder="Runs Batted In (RBA)" id="runs_batted_in">
+  </div>
+  <div class="create-text-input">
+    <input type="text" placeholder="Batting Average(BA)" id="batting_average">
+  </div>
+  <div class="create-submit-btn">
+    <button type='submit' class="submit-btn">Create Player</button>
+  </div>
+ </form>
+</div>
 
-  
-</form>
+
 

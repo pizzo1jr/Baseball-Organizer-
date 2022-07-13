@@ -35,9 +35,9 @@ button:hover{
 
 /* login form style */
 .form-wrapper{
+    margin-top:1rem;
     display: flex;
     justify-content: center;
-    height:50vh;
     align-items: center;
 }
 
@@ -202,6 +202,14 @@ button:hover{
 } */
 
 /* create a new player page */
+.create-player-form div{
+    margin:1rem;
+}
+
+.create-player-form input{
+    padding:10px;
+}
+
 .create-player-title{
     background-color: #212529;
     color: #FFF;
@@ -212,6 +220,13 @@ button:hover{
     padding:4px;
 }
 
+p.create-instruction {
+    border-bottom: 3px solid white;
+}
+
+.create-radio-input input {
+    width: 2rem;
+}
 /* utilities */
 .fixed {
     position: sticky;
