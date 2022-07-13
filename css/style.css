@@ -1,8 +1,0 @@
-/* body {
-    background-position: center;
-    background-image: url(../images/baseball\ field.jpg);
-    background-attachment: fixed; */
-
-.fixed {
-    position: sticky;
-}
