@@ -1,3 +1,5 @@
+const forgotPassForm = document.querySelector('.forgot-pass-form');
+
 async function forgotPassHandler(event) {
    event.preventDefault();
    const email = document.querySelector('#forgot-pass-email').value.trim();
@@ -12,7 +14,7 @@ async function forgotPassHandler(event) {
       });
       
       if (response.ok){
-         alert('An email was sent with a secure link to update your password');
+         // alert('An email was sent with a secure link to update your password');
          document.location.replace('/user/update-password')
       } else {
          alert(response.statusText);
@@ -20,4 +22,4 @@ async function forgotPassHandler(event) {
    };
 };
 
-document.querySelector('.forgot-pass-form').addEventListener('submit', forgotPassHandler);
+forgotPassForm.addEventListener('submit', forgotPassHandler);
