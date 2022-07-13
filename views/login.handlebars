@@ -1,12 +1,10 @@
 <div class="form-wrapper">
    <form class="login-form form">
       <div class="login-email">
-         <label for="email">Email: </label>
-         <input type="email" name="email" id="email">
+         <input type="email" name="email" id="email" placeholder="Email...">
       </div>
       <div class="login-password">
-         <label for="password">Password:</label>
-         <input type="password" name="password" id="password">
+         <input type="password" name="password" id="password" placeholder="Password...">
       </div>
       <button type="submit" class="submit-btn">Log In</button>
       <p>Not a member? <a href="/user/signup">Sign Up Now!</a></p>
@@ -15,9 +13,10 @@
 
 <div class="form-wrapper">
    <form class="forgot-pass-form form">
+      <p class="forgot-pass-instruction">Forgot Password? Enter your email below</p>
       <label for="forgot-pass-email">Email: </label>
       <input type="email" id="forgot-pass-email" name="forgot-pass-email">
-      <button type="submit">Forgot Password</button>
+      <button type="submit" class="submit-btn">Forgot Password</button>
    </form>
 </div>
    

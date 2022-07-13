@@ -7,6 +7,10 @@
     padding:0;
 }
 
+main{
+    margin-top:0.5rem;
+}
+
 /* rest all <a> anchore tags */
 a {
     text-decoration: none;
@@ -36,22 +40,20 @@ button:hover{
 }
 
 .form {
-    border: 2px dashed #FFFF;
-    border-radius: 10px;
-    background: #212529;
+    border: 2px solid white;
+    border-radius: 5px;
+    background: #DC3545;
     color: #FFFFFF;
     padding: 2rem;
     font-size: 25px;
     font-weight: 700;
 }
 
-.form #email {
-    margin: 1.5rem;
-}
 
 .form input {
     border-radius: 10px;
     width: 22rem;
+    margin:1rem;
 }
 
 .submit-btn {
@@ -106,7 +108,12 @@ button:hover{
 }
 
 .dashboard-btn {
-    margin:10px;
+    margin: 10px auto 10px auto;
+    display: block;
+}
+
+.create-player-btn{
+    width:10rem;
 }
 
 /* create team style */
@@ -231,3 +238,6 @@ p.create-instruction {
     margin:auto;
 }
 
+.forgot-pass-instruction{
+    text-align: center;
+}
