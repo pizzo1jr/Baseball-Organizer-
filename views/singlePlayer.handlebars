@@ -2,10 +2,10 @@
    <img src="/images/placeholder.svg" alt="palceholder img">
    <ul>
       <li>{{player.player_name}}</li>
-      {{#if player.team}}
+      {{#if player.team.length}}
       <li>Team: None</li>
       {{else}}
-      <li>Team: {{player.team}}</li>
+      <li>Team: {{player.team.team_name}}</li>
       {{/if}}
    </ul>
 </section>
