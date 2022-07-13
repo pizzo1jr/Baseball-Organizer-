@@ -9,7 +9,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store); //im
 
 // make an instance of the session storage
 const sess = {
-  secret: 'Super secret secret',
+  secret: 'Super secret secret secret',
   cookies: {},
   resave: false,
   saveUnitialized: true,
