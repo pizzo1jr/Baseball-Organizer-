@@ -27,3 +27,16 @@ The application has back-end and front-end. Each used different tools
 - **CSS** for styling the HTML pages served using express and handlebars.
 - **HTML** marking up the pages.
 - **bootstrap** CSS framework. Used for the layouts in HTML pages.
+
+## Installation Instructions
+The app will be hosted by heroku in the future. For now, the app can be installed after installing Node.js, VScode and following these steps:  
+- Clone the repository
+- Navigate to the `server.js` file
+- Open the terminal in VScode and type in the command `npm start`
+- The server should start once the the command is run.
+
+## Usage
+Once the server is initiated, the user is present with the home-page. The user can sign up or log in by using the links in the navigation bar.  
+Once logged in, the user is presented with their dashboard:
+![dashboard](./finished-images/dashboard.PNG)  
+
