@@ -87,7 +87,7 @@ router.put('/:id', (req, res) => {
 
 // delete a player
 router.delete('/:id', (req, res) => {
-   Player.destroy(req.body,{
+   Player.destroy({
       where:{
          id:req.params.id
       }

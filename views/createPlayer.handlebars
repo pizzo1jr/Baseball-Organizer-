@@ -1,7 +1,6 @@
-<h1 class="create-player-title">Create a New Player</h1>
+{{!-- <h1 class="create-player-title">Create a New Player</h1> --}}
 
-
-<div class="form-wrapper">
+<div class="form-wrapper create-form-wrapper">
   <form class="create-player-form form">
     <div class="create-text-input">
       <input id="first_name" type="text" placeholder="First Name">
@@ -14,6 +13,7 @@
       <select name="postion" id="position">
         <option value="C">Catcher</option>
         <option value="P">Pitcher</option>
+        <option value="SS">Short Stop</option>
         <option value="1B">First Base</option>
         <option value="2B">Second Base</option>
         <option value="3B">Third Base</option>
@@ -67,6 +67,10 @@
     </div>
  </form>
 </div>
+
+<section class="form-submit-message">
+
+</section>
 
 <script src="/javascript/createPlayer.js"></script>
 

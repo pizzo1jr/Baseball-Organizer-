@@ -172,7 +172,8 @@ button:hover{
 .edit-team-title{
     background-color: #212529;
     color:#FFF;
-    text-align:center
+    text-align:center;
+    /* margin-top: 10rem; */
 }
 
 .edit-team-players-title{
@@ -216,7 +217,11 @@ button:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 } */
 
-/* create a new player page */
+/*  a new player page */
+.create-form-wrapper{
+    margin-top:5rem;
+}
+
 .create-player-form div{
     margin:1rem;
 }
@@ -231,7 +236,7 @@ button:hover{
     font-size: 2rem;
     text-align: center;
     width:86%;
-    margin:auto;
+    margin:10rem auto;
     padding:4px;
 }
 

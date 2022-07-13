@@ -1,3 +1,5 @@
+ const formSubmitMessage = document.querySelector(".form-submit-message");
+
 async function editTeamPlayerFormHandler(event){
    event.preventDefault();
    const player_arr = [];
@@ -20,7 +22,14 @@ async function editTeamPlayerFormHandler(event){
             headers:{'Content-Type':'application/json'}
          })
       }
-      alert('Players removed');
+      // alert('Players removed');
+      if(document.getElementById('message')){
+         document.getElementById('message').remove();
+      }
+      let message = document.createElement('p');
+      message.setAttribute('id','message')  
+      message.textContent = `All selected players were removed from current team`;
+      formSubmitMessage.appendChild(message);
       document.location.reload();
    }
 };

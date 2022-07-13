@@ -26,7 +26,6 @@ async function editTeamFormHandler(event){
             alert(response.statusText);
          }
       };
-      alert('All players are added to the team');
       document.location.reload();
    };
 };

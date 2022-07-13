@@ -1,3 +1,5 @@
+const formSubmitMessage = document.querySelector('.form-submit-message');
+
 async function createPlayerFormHandler(event){
    event.preventDefault();
 
@@ -58,7 +60,14 @@ async function createPlayerFormHandler(event){
    })
    
    if(response.ok){
-      alert('Player Created');
+      if(document.getElementById('message')){
+         document.getElementById('message').remove();
+      }
+      let message = document.createElement('p');
+      message.setAttribute('id','message')  
+      message.textContent = `${player_name} was added. Check them out in the Dashboard!`;
+      formSubmitMessage.appendChild(message);
+
    } else {
       alert(response.statusText);
    }
