@@ -20,7 +20,7 @@ const sess = {
 
 
 const app = express(); // set app as an instance of express
-const PORT = process.env.PORT | 3001 // use environment port use port 3001 in local environment
+const PORT = process.env.PORT || 3001 // use environment port use port 3001 in local environment
 
 // middlewears for converting JSON to other data format
 app.use(express.static(path.join(__dirname, 'public')));
