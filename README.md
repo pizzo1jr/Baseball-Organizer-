@@ -1,4 +1,4 @@
-# Project-2-Will-Rename
+# Baseball Organizer
 
 ## Description 
 This app is built to help users organize their Baseball teams. The users can create teams and players. The users can add or remove players from their teams. The teams for the users are saved; so, once they revisit, their teams and players are saved. The users can also keep records of player stats and view them as necessary.
