@@ -4,7 +4,7 @@
       {{#each this.players}}
       <li class="player-card">
          
-         <input id="select-players" type="checkbox" value="{{this.id}}" name="select-players"/>
+         <input id="select-players" type="checkbox" value="{{this.id}}" name="select-players" data-name='{{this.player_name}}'/>
 
          <img class="player-card-img" src="/images/placeholder.svg" alt="card image cap">
          <div class="player-card-body">
@@ -18,6 +18,15 @@
    </ul>
    <button type='submit' class="add-players-btn btn btn-outline-dark"> Add Players </button>
 </form> 
+
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <ul id="modal-message">Following Players were added to the team: </ul>
+  </div>
+</div>
+
 
 
 <script src="/javascript/add-team.js"></script>
