@@ -1,3 +1,8 @@
+
+let modal = document.getElementById("myModal");
+let span = document.getElementsByClassName("close")[0];
+let modalMessage = document.getElementById('modal-message');
+
 async function editFormHandler(event){
    event.preventDefault();
    const id = document.location.toString().split('/')[document.location.toString().split('/').length - 1];
@@ -58,11 +63,20 @@ async function editFormHandler(event){
    })
    
    if(response.ok){
-      document.location.reload();
-
+      modalMessage.textContent = `${player_name} is Updated!`;
+      modal.style.display = 'block';
    } else {
       alert(response.statusText);
    }
 }
 
 document.querySelector('.edit-player-form').addEventListener('submit', editFormHandler);
+
+span.addEventListener('click', function(){
+   modal.style.display = 'none';
+})
+window.addEventListener('click', function(event){
+   if (event.target == modal){
+      document.location.reload();
+   }
+});

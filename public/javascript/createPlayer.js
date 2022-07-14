@@ -1,4 +1,7 @@
-const formSubmitMessage = document.querySelector('.form-submit-message');
+
+let modal = document.getElementById("myModal");
+let span = document.getElementsByClassName("close")[0];
+let modalMessage = document.getElementById('modal-message');
 
 async function createPlayerFormHandler(event){
    event.preventDefault();
@@ -60,17 +63,20 @@ async function createPlayerFormHandler(event){
    })
    
    if(response.ok){
-      if(document.getElementById('message')){
-         document.getElementById('message').remove();
-      }
-      let message = document.createElement('p');
-      message.setAttribute('id','message')  
-      message.textContent = `${player_name} was added. Check them out in the Dashboard!`;
-      formSubmitMessage.appendChild(message);
-
+      modalMessage.textContent = `${player_name} is added!`;
+      modal.style.display = 'block';
    } else {
       alert(response.statusText);
    }
 }
 
 document.querySelector('.create-player-form').addEventListener('submit', createPlayerFormHandler);
+
+span.addEventListener('click', function(){
+   modal.style.display = 'none';
+})
+window.addEventListener('click', function(event){
+   if (event.target == modal){
+      document.location.reload();
+   }
+});

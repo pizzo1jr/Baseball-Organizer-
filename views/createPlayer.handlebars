@@ -63,14 +63,20 @@
       <input type="text" placeholder="Batting Average(BA)" id="batting_average">
     </div>
     <div class="create-submit-btn">
-      <button type='submit' class="submit-btn">Create Player</button>
+      <button id='myBtn' type='submit' class="submit-btn">Create Player</button>
     </div>
  </form>
 </div>
 
-<section class="form-submit-message">
 
-</section>
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="modal-message"></p>
+  </div>
+</div>
+
 
 <script src="/javascript/createPlayer.js"></script>
 
