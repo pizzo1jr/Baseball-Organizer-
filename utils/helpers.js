@@ -6,8 +6,13 @@ function lastName(full_name){
    return full_name.split(' ')[1];
 };
 
+function batting_average(hits, at_bats){
+   return hits/at_bats;
+}
+
 module.exports = {
    firstName,
-   lastName
+   lastName,
+   batting_average
 };
 
