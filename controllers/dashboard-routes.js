@@ -96,4 +96,17 @@ router.get('/create-player', (req, res) => {
    res.render('createPlayer', {loggedIn: req.session.loggedIn});
 });
 
+// editing player page get route
+router.get('/edit-player/:id', (req, res) => {
+   Player.findOne({
+      where:{
+         id:req.params.id
+      }
+   })
+   .then(dbPlayerData => {
+      const player = dbPlayerData.get({plain:true});
+      res.render('edit-player', {player, loggedIn:req.session.loggedIn});
+   })
+})
+
 module.exports = router;

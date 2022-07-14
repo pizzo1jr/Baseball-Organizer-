@@ -1,0 +1,70 @@
+<div class="form-wrapper create-form-wrapper">
+  <form class="create-player-form form">
+    <div class="create-text-input">
+      <input id="first_name" type="text" placeholder="First Name" value="{{firstName player.player_name}}">
+    </div>
+    <div class="create-text-input">
+      <input id="last_name" type="text" placeholder="Last Name" value="{{lastName player.player_name}}">
+    </div>
+    <div class="create-select-input">
+      <label for="position">Player Position:</label>
+      <select name="postion" id="position" value="{{player.position}}">
+         <option value="" disabled selected>Update Position...</option>
+        <option value="C">Catcher</option>
+        <option value="P">Pitcher</option>
+        <option value="SS">Short Stop</option>
+        <option value="1B">First Base</option>
+        <option value="2B">Second Base</option>
+        <option value="3B">Third Base</option>
+        <option value="RF">Right Field</option>
+        <option value="CF">Center Field</option>
+        <option value="LF">Left Field</option>
+      </select>
+    </div>
+    <div class="create-radio-input">
+      <p>Update Batting Position:</p>
+      <input name="bats" type="radio" value="Left" id="bats_left">
+      <label for="left">Left</label>
+      <input name='bats' type="radio" value="Right" id="bats_right">
+      <label for="right">Right</label>
+    </div>
+    <div class="create-radio-input">
+      <p>Update Throwing Side:</p>
+      <input name="throws" type="radio" value="Left" id="throws_left">
+      <label for="left">Left</label>
+      <input name="throws" type="radio" value="Right" id="throws_right">
+      <label for="right">Right</label>
+    </div>
+    <p class="create-instruction">Pitching Stats</p>
+    <div class="create-text-input">
+      <input type="text" placeholder="Strike Outs" id="strike_outs" value="{{player.strike_outs}}"> 
+    </div>
+    <div class="create-text-input">
+      <input type="text" placeholder="Batters Walked" id="batters_walked" value="{{player.batters_walked}}">
+    </div>
+    <div class="create-text-input">
+      <input type="text" placeholder="Innings Pitched" id="innings_pitched" value="{{player.innings_pitched}}">
+    </div>
+    <div>
+      <input type="text" placeholder="Earned Run Average" id="earned_run_average" value="{{player.earned_run_average}}">
+    </div>
+    <p class="create-instruction">Batting Stats</p>
+    <div class="create-text-input">
+      <input type="text" placeholder="At Bats" id="at_bats" value="{{player.at_bats}}">
+    </div>
+    <div class="create-text-input">
+      <input type="text" placeholder="Hits" id="hits" value="{{player.hits}}">
+    </div>
+    <div class="create-text-input">
+      <input type="text" placeholder="Runs Batted In (RBA)" id="runs_batted_in" value="{{player.runs_batted_in}}">
+    </div>
+    <div class="create-text-input">
+      <input type="text" placeholder="Batting Average(BA)" id="batting_average" value="{{player.batting_average}}">
+    </div>
+    <div class="create-submit-btn">
+      <button type='submit' class="submit-btn">Update Player</button>
+    </div>
+ </form>
+</div>
+
+<script src="/javascript/edit-player/"></script>
