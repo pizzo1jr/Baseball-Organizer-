@@ -19,25 +19,30 @@
       <li class="list-group-item">Bats: {{player.bats}}</li>
    </ul>
 
-   <ul class="list-group">
-      <div class="section-title">Pitching Stats</div>
-      <li class="list-group-item" data-type="{{player.pitch_count}}">
-         Current Pitch Count: {{player.pitch_count}}
-         <div class="pitch-counter">
-            <button type='button' id="pitch-count-up" class="badge badge-primary">&#43;</button> <button type='button' id="pitch-count-down" class="badge badge-primary">&#8722;</button>
-         </div>
-      </li>
-      <li class="list-group-item">Strike Outs: {{player.strike_outs}}</li>
-      <li class="list-group-item">Batters Walked: {{player.batters_walked}}</li>
-      <li class="list-group-item">Innings Pitched: {{player.innings_pitched}}</li>
-      <li class="list-group-item">Earned Run Average: {{player.earned_run_average}}</li>
-   </ul>
-
-   <ul class="list-group">
-      <div class="section-title">Batting Stats</div>
-      <li class="list-group-item">At Bats: {{player.at_bats}}</li>
-      <li class="list-group-item">Hits: {{player.hits}}</li>
-      <li class="list-group-item">Runs Batted in: {{player.runs_batted_in}}</li>
-      <li class="list-group-item">Batting Average: {{player.batting_average}}</li>
-   </ul>
+   <section id="live-editable-stats">
+      <ul class="list-group">
+         <div class="section-title">Pitching Stats</div>
+         <li class="list-group-item" data-count="{{player.pitch_count}}" data-query="pitch_count">
+            Current Pitch Count: {{player.pitch_count}}
+            <div class="pitch-counter">
+               <button type='button' data-action="count-up" class="badge badge-primary">&#43;</button> <button type='button' data-action="count-down" class="badge badge-primary">&#8722;</button>
+            </div>
+         </li>
+         <li class="list-group-item">Strike Outs: {{player.strike_outs}}</li>
+         <li class="list-group-item">Batters Walked: {{player.batters_walked}}</li>
+         <li class="list-group-item">Innings Pitched: {{player.innings_pitched}}</li>
+         <li class="list-group-item">Earned Run Average: {{player.earned_run_average}}</li>
+      </ul>
+      {{!-- batting stats --}}
+      <ul class="list-group">
+         <div class="section-title">Batting Stats</div>
+         <li class="list-group-item">At Bats: {{player.at_bats}}</li>
+         <li class="list-group-item">Hits: {{player.hits}}</li>
+         <li class="list-group-item">Runs Batted in: {{player.runs_batted_in}}</li>
+         <li class="list-group-item">Batting Average: {{player.batting_average}}</li>
+      </ul>
+   </section>
 </section>
+   
+
+<script src="/javascript/liveUpdateStats.js"></script>

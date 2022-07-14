@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const {User, Team, Player} = require('../../models');
 
-router.put('/live_edit/:id', (req, res)=>{
+router.put('/live_edit/:id?', (req, res)=>{
    Player.update(req.query, {
       where:{
          id:req.params.id
