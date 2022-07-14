@@ -14,13 +14,19 @@
 <section class="advance-player-info">
    <ul class="list-group">
       <div class="section-title">Basic Stats</div>
-      <li class="list-group-item">Position: <span class="stat-value">{{player.position}}</span></li>
+      <li class="list-group-item">Position: <span>{{player.position}}</span></li>
       <li class="list-group-item">Throws: {{player.throws}}</li>
       <li class="list-group-item">Bats: {{player.bats}}</li>
    </ul>
 
    <ul class="list-group">
       <div class="section-title">Pitching Stats</div>
+      <li class="list-group-item" data-type="{{player.pitch_count}}">
+         Current Pitch Count: {{player.pitch_count}}
+         <div class="pitch-counter">
+            <button type='button' id="pitch-count-up" class="badge badge-primary">&#43;</button> <button type='button' id="pitch-count-down" class="badge badge-primary">&#8722;</button>
+         </div>
+      </li>
       <li class="list-group-item">Strike Outs: {{player.strike_outs}}</li>
       <li class="list-group-item">Batters Walked: {{player.batters_walked}}</li>
       <li class="list-group-item">Innings Pitched: {{player.innings_pitched}}</li>

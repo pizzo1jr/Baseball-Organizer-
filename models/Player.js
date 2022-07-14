@@ -47,6 +47,11 @@ Player.init(
          allowNullL: false,
          defaultValue:"Right"
       },
+      pitch_count: {
+         type:DataTypes.INTEGER,
+         allowNull:true,
+         defaultValue:0
+      },
       strike_outs: { // strike default value is set to zero or it will be null. The user can leave it blank if they player did not pitch.
          type: DataTypes.INTEGER,
          defaultValue: 0

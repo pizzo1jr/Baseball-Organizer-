@@ -1,6 +1,14 @@
 const router = require('express').Router();
 const {User, Team, Player} = require('../../models');
 
+router.put('/live_edit/:id', (req, res)=>{
+   Player.update(req.query, {
+      where:{
+         id:req.params.id
+      }
+   })
+   .then(dbPlayerData => res.json(dbPlayerData));
+})
 
 router.get('/', (req, res) => {
    Player.findAll({
@@ -21,6 +29,7 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
    });
 });
+
 
 // get one player based on id
 router.get('/:id', (req, res) => {
@@ -64,6 +73,7 @@ router.post('/', (req, res) => {
       res.status(500).json(err);
    });
 });
+
 
 // edit a player information
 router.put('/:id', (req, res) => {
