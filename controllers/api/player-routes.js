@@ -67,6 +67,7 @@ router.post('/', (req, res) => {
 
 // edit a player information
 router.put('/:id', (req, res) => {
+   req.body.user_id = req.session.user_id;
    Player.update(req.body,{
       where:{
          id:req.params.id

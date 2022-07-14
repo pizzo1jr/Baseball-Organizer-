@@ -247,6 +247,17 @@ p.create-instruction {
 .create-radio-input input {
     width: 2rem;
 }
+
+/* EDIT player style */
+.edit-player-form div{
+    margin:1rem;
+}
+
+.edit-player-form input{
+    padding:10px;
+}
+
+
 /* utilities */
 .fixed {
     position: sticky;
