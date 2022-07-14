@@ -7,7 +7,7 @@ function lastName(full_name){
 };
 
 function batting_average(hits, at_bats){
-   return hits/at_bats;
+   return (hits/at_bats).toFixed(2);
 }
 
 module.exports = {
