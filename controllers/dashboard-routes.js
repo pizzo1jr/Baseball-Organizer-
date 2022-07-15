@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const {User, Player, Team} = require('../models');
+const withAuth = require('../utils/withAuth');
 
-router.get('/', (req, res) => {
+router.get('/', withAuth ,(req, res) => {
    User.findOne({
       where:{
          id:req.session.user_id
