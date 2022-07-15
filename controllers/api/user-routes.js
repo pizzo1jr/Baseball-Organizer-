@@ -2,9 +2,10 @@ const router = require('express').Router();
 const {User} = require('../../models');
 const sendingMail = require('../../utils/nodemailer');
 const generateAuthCode = require('../../utils/generateAuthCode');
+const withAuth = require('../../utils/withAuth');
 
 // get all the users
-router.get('/', (req, res) => {
+router.get('/',withAuth, (req, res) => {
    User.findAll({
       attributes: {exclude:['password']},
    })
@@ -18,7 +19,7 @@ router.get('/', (req, res) => {
 });
 
 // get one user using id
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth,(req, res) => {
    User.findOne({
       where: {
          id:req.params.id
@@ -57,7 +58,7 @@ router.post('/', (req, res) => {
 });
 
 // put request for updating Users
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth,(req, res) => {
    User.update(req.body, {
       where:{
          id: req.params.id
