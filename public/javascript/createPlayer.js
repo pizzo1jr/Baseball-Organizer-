@@ -74,6 +74,7 @@ document.querySelector('.create-player-form').addEventListener('submit', createP
 
 span.addEventListener('click', function(){
    modal.style.display = 'none';
+   document.location.reload();
 })
 window.addEventListener('click', function(event){
    if (event.target == modal){

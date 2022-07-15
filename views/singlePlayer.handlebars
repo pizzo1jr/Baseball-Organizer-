@@ -64,7 +64,11 @@
                <button type='button' data-action="count-up" class="badge badge-primary">&#43;</button> <button type='button' data-action="count-down" class="badge badge-primary">&#8722;</button>
             </span>
          </li>
+         {{#if at_bats}}
+         <li class="list-group-item">Batting Average: 0</li>
+         {{else}}
          <li class="list-group-item">Batting Average: {{batting_average player.hits player.at_bats}}</li>
+         {{/if}}
       </ul>
    </section>
 </section>
