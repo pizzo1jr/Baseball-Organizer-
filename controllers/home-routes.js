@@ -18,7 +18,7 @@ router.get('/user/signup', (req, res)=>{
 });
 
 // render forgot password form
-router.get('/user/update-password',(req, res)=>{
+router.get('/user/update-password', (req, res)=>{
    res.render('update-password');
 })
 

@@ -24,13 +24,13 @@ router.get('/', withAuth ,(req, res) => {
    })
 });
 
-router.get('/create-team', (req, res) => {
+router.get('/create-team', withAuth ,(req, res) => {
    
    res.render('create-team', {loggedIn: req.session.loggedIn});
    
 });
 
-router.get('/add-team/:id', (req, res) => {
+router.get('/add-team/:id', withAuth ,(req, res) => {
    Player.findAll({
       where:{
          user_id:req.session.user_id,
@@ -48,7 +48,7 @@ router.get('/add-team/:id', (req, res) => {
    });
 });
 
-router.get('/edit-team/:id', (req, res) => {
+router.get('/edit-team/:id', withAuth ,(req, res) => {
    Team.findOne({
       where:{
          id:req.params.id
@@ -70,7 +70,7 @@ router.get('/edit-team/:id', (req, res) => {
 
 // single player status page
 
-router.get('/single-player/:id', (req, res) => {
+router.get('/single-player/:id', withAuth ,(req, res) => {
    Player.findOne({
       where:{
          id:req.params.id
@@ -93,7 +93,7 @@ router.get('/single-player/:id', (req, res) => {
 });
 
 // creating a new player route
-router.get('/create-player', (req, res) => {
+router.get('/create-player', withAuth,(req, res) => {
    res.render('createPlayer', {loggedIn: req.session.loggedIn});
 });
 
