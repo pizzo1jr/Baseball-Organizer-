@@ -3,9 +3,9 @@ let modal = document.getElementById("myModal");
 let span = document.getElementsByClassName("close")[0];
 let modalMessage = document.getElementById('modal-message');
 
-async function createPlayerFormHandler(event){
+async function editFormHandler(event){
    event.preventDefault();
-
+   const id = document.location.toString().split('/')[document.location.toString().split('/').length - 1];
    // get all the inputs
    const first_name = document.querySelector('#first_name').value.trim();
    const last_name = document.querySelector('#last_name').value.trim();
@@ -43,8 +43,8 @@ async function createPlayerFormHandler(event){
    const runs_batted_in = document.querySelector('#runs_batted_in').value.trim();
    const batting_average = document.querySelector('#batting_average').value.trim();
 
-   const response = await fetch('/api/players', {
-      method:'POST',
+   const response = await fetch(`/api/players/${id}`, {
+      method:'PUT',
       body:JSON.stringify({
          player_name,
          position,
@@ -63,18 +63,17 @@ async function createPlayerFormHandler(event){
    })
    
    if(response.ok){
-      modalMessage.textContent = `${player_name} is added!`;
+      modalMessage.textContent = `${player_name} is Updated!`;
       modal.style.display = 'block';
    } else {
       alert(response.statusText);
    }
 }
 
-document.querySelector('.create-player-form').addEventListener('submit', createPlayerFormHandler);
+document.querySelector('.edit-player-form').addEventListener('submit', editFormHandler);
 
 span.addEventListener('click', function(){
    modal.style.display = 'none';
-   document.location.reload();
 })
 window.addEventListener('click', function(event){
    if (event.target == modal){

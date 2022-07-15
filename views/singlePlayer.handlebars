@@ -1,3 +1,4 @@
+
 <section class="basic-player-info player-card">
    <img src="/images/placeholder.svg" alt="palceholder img">
    <ul>
@@ -8,29 +9,69 @@
       <li>Team: {{player.team.team_name}}</li>
       {{/if}}
    </ul>
+   <a  class="btn btn-primary" href='/dashboard/edit-player/{{player.id}}'>Bulk Update Stats</a>
 </section>
 
 <section class="advance-player-info">
    <ul class="list-group">
       <div class="section-title">Basic Stats</div>
-      <li class="list-group-item">Position: <span class="stat-value">{{player.position}}</span></li>
+      <li class="list-group-item">Position: <span>{{player.position}}</span></li>
       <li class="list-group-item">Throws: {{player.throws}}</li>
       <li class="list-group-item">Bats: {{player.bats}}</li>
    </ul>
 
-   <ul class="list-group">
-      <div class="section-title">Pitching Stats</div>
-      <li class="list-group-item">Strike Outs: {{player.strike_outs}}</li>
-      <li class="list-group-item">Batters Walked: {{player.batters_walked}}</li>
-      <li class="list-group-item">Innings Pitched: {{player.innings_pitched}}</li>
-      <li class="list-group-item">Earned Run Average: {{player.earned_run_average}}</li>
-   </ul>
-
-   <ul class="list-group">
-      <div class="section-title">Batting Stats</div>
-      <li class="list-group-item">At Bats: {{player.at_bats}}</li>
-      <li class="list-group-item">Hits: {{player.hits}}</li>
-      <li class="list-group-item">Runs Batted in: {{player.runs_batted_in}}</li>
-      <li class="list-group-item">Batting Average: {{player.batting_average}}</li>
-   </ul>
+   <section id="live-editable-stats">
+      <ul class="list-group">
+         <div class="section-title">Pitching Stats</div>
+         <li class="list-group-item" data-count="{{player.pitch_count}}" data-query="pitch_count">
+            Current Pitch Count: {{player.pitch_count}}
+            <span class="counter">
+               <button type='button' data-action="count-up" class="badge badge-primary">&#43;</button> <button type='button' data-action="count-down" class="badge badge-primary">&#8722;</button>
+            </span>
+         </li>
+         <li class="list-group-item" data-count="{{player.strike_outs}}" data-query="strike_outs">Strike Outs: {{player.strike_outs}}
+            <span class="counter">
+               <button type='button' data-action="count-up" class="badge badge-primary">&#43;</button> <button type='button' data-action="count-down" class="badge badge-primary">&#8722;</button>
+            </span>
+         </li>
+         <li class="list-group-item" data-count="{{player.batters_walked}}" data-query="batters_walked">Batters Walked: {{player.batters_walked}}
+            <span class="counter">
+               <button type='button' data-action="count-up" class="badge badge-primary">&#43;</button> <button type='button' data-action="count-down" class="badge badge-primary">&#8722;</button>
+            </span>
+         </li>
+         <li class="list-group-item" data-count="{{player.innings_pitched}}" data-query="innings_pitched">Innings Pitched: {{player.innings_pitched}}
+            <span class="counter">
+               <button type='button' data-action="count-up" class="badge badge-primary">&#43;</button> <button type='button' data-action="count-down" class="badge badge-primary">&#8722;</button>
+            </span>
+         </li>
+         <li class="list-group-item" data-count="{{player.earned_run_average}}" data-query="earned_run_average">Earned Run Average: {{player.earned_run_average}}</li>
+      </ul>
+      {{!-- batting stats --}}
+      <ul class="list-group">
+         <div class="section-title">Batting Stats</div>
+         <li class="list-group-item" data-count="{{player.at_bats}}" data-query="at_bats">At Bats: {{player.at_bats}}
+            <span class="counter">
+               <button type='button' data-action="count-up" class="badge badge-primary">&#43;</button> <button type='button' data-action="count-down" class="badge badge-primary">&#8722;</button>
+            </span>
+         </li>
+         <li class="list-group-item" data-count="{{player.hits}}" data-query="hits">Hits: {{player.hits}}
+            <span class="counter">
+               <button type='button' data-action="count-up" class="badge badge-primary">&#43;</button> <button type='button' data-action="count-down" class="badge badge-primary">&#8722;</button>
+            </span>
+         </li>
+         <li class="list-group-item" data-count="{{player.runs_batted_in}}" data-query="runs_batted_in">Runs Batted in: {{player.runs_batted_in}}
+            <span class="counter">
+               <button type='button' data-action="count-up" class="badge badge-primary">&#43;</button> <button type='button' data-action="count-down" class="badge badge-primary">&#8722;</button>
+            </span>
+         </li>
+         {{#if at_bats}}
+         <li class="list-group-item">Batting Average: 0</li>
+         {{else}}
+         <li class="list-group-item">Batting Average: {{batting_average player.hits player.at_bats}}</li>
+         {{/if}}
+      </ul>
+   </section>
 </section>
+   
+
+<script src="/javascript/liveUpdateStats.js"></script>

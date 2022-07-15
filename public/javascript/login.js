@@ -1,3 +1,5 @@
+const formSubmitMessage = document.querySelector('.form-submit-message');
+
 async function loginFormHandler(event){
    event.preventDefault();
    
@@ -19,7 +21,13 @@ async function loginFormHandler(event){
       if(response.ok){
          document.location.replace('/dashboard');
       } else {
-         alert(response.statusText);
+         if(document.getElementById('message')){
+            document.getElementById('message').remove();
+         }
+         let message = document.createElement('p');
+         message.setAttribute('id','message')  
+         message.textContent = 'email or password is incorrect. Please try again';
+         formSubmitMessage.appendChild(message);
       }
    }
 

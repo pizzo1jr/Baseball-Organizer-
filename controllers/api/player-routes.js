@@ -1,8 +1,17 @@
 const router = require('express').Router();
 const {User, Team, Player} = require('../../models');
+const withAuth = require('../../utils/withAuth');
 
+router.put('/live_edit/:id?', withAuth ,(req, res)=>{
+   Player.update(req.query, {
+      where:{
+         id:req.params.id
+      }
+   })
+   .then(dbPlayerData => res.json(dbPlayerData));
+})
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
    Player.findAll({
       include:[
          {
@@ -22,8 +31,9 @@ router.get('/', (req, res) => {
    });
 });
 
+
 // get one player based on id
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
    Player.findOne({
       where:{
          id: req.params.id
@@ -53,7 +63,7 @@ router.get('/:id', (req, res) => {
 });
 
 // create a player
-router.post('/', (req, res) => {
+router.post('/', withAuth ,(req, res) => {
    req.body.user_id = req.session.user_id;
    Player.create(req.body)
    .then(dbPlayerData => {
@@ -65,8 +75,10 @@ router.post('/', (req, res) => {
    });
 });
 
+
 // edit a player information
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
+   req.body.user_id = req.session.user_id;
    Player.update(req.body,{
       where:{
          id:req.params.id
@@ -86,7 +98,7 @@ router.put('/:id', (req, res) => {
 });
 
 // delete a player
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
    Player.destroy({
       where:{
          id:req.params.id

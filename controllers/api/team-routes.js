@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const {User, Team, Player} = require('../../models');
+const withAuth = require('../../utils/withAuth');
 
 // get all teams and their users (coach)
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
    Team.findAll({
       attributes:['id','team_name','user_id','created_at'],
       include:[
@@ -26,7 +27,7 @@ router.get('/', (req, res) => {
 });
 
 // get one team and their user(coach) based on params id
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth,(req, res) => {
    Team.findOne({
       where:{
          id:req.params.id
@@ -57,7 +58,7 @@ router.get('/:id', (req, res) => {
 });
 
 // update a team name (for now its just name. We can edit the player in later)
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
    Team.update(
       {
          team_name: req.body.team_name
@@ -82,7 +83,7 @@ router.put('/:id', (req, res) => {
 });
 
 // create a team
-router.post('/', (req, res) => {
+router.post('/', withAuth,(req, res) => {
    Team.create({
       team_name: req.body.team_name,
       user_id: req.session.user_id // will update to req.session.id
@@ -97,7 +98,7 @@ router.post('/', (req, res) => {
 });
 
 // DELETE a team 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth,(req, res) => {
    Team.destroy({
       where:{
          id: req.params.id
