@@ -296,7 +296,35 @@ p.create-instruction {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
+}
+
+/* batting roster styles */
+.batting-roster-btn{
+    width: 12rem;
+}
+
+.batting-roster-form{
+    width:90%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5rem;
+    background-color:#DC3545;
+    color: white;
+    font-size:2rem;
+    font-weight: 500;
+    margin:auto;
+    margin-top:5rem;
+    padding:10px;
+    border-radius:5px;
+}
+
+.batting-roster-form input[type='radio'] { 
+    transform: scale(2); 
+    margin-right:10px;
+    margin-left:10px;
+}
+
 /* utilities */
 .fixed {
     position: sticky;

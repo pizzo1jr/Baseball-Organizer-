@@ -106,8 +106,13 @@ router.get('/edit-player/:id', (req, res) => {
    })
    .then(dbPlayerData => {
       const player = dbPlayerData.get({plain:true});
-      res.render('edit-player', {player, loggedIn:req.session.loggedIn});
-   })
-})
+      res.render('edit-player', {player, loggedIn: req.session.loggedIn});
+   });
+});
+
+// render the player batting roster page
+router.get('/batting-roster', (req, res)=>{
+   res.render('battingRoster', {loggedIn: req.session.loggedIn});
+});
 
 module.exports = router;

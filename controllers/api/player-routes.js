@@ -9,6 +9,23 @@ router.put('/live_edit/:id?', withAuth ,(req, res)=>{
       }
    })
    .then(dbPlayerData => res.json(dbPlayerData));
+});
+
+// filtering player by batting stats for battin roster page
+router.post('/batting-roster/?', (req, res) => {
+   Player.findAll({
+      attributes:['player_name', 'position','at_bats','batting_average','hits'],
+      order:[
+         [Object.values(req.query)[0], 'DESC']
+      ]
+   })
+   .then(dbPlayerData => {
+      res.status(200).json(dbPlayerData);
+   })
+   .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+   })
 })
 
 router.get('/', withAuth, (req, res) => {
@@ -116,5 +133,6 @@ router.delete('/:id', withAuth, (req, res) => {
       res.status(500).json(err);
    });
 });
+
 
 module.exports = router;
