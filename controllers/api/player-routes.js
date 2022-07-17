@@ -20,7 +20,8 @@ router.post('/batting-roster/?', (req, res) => {
       ]
    })
    .then(dbPlayerData => {
-      res.status(200).json(dbPlayerData);
+      const players = dbPlayerData.map(player => player.get({plain:true}))
+      res.status(200).json(players);
    })
    .catch(err => {
       console.log(err);
