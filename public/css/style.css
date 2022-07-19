@@ -299,6 +299,21 @@ p.create-instruction {
 }
 
 /* batting roster styles */
+.batting-roster-wrapper{
+    display:flex;
+    flex-direction: row wrap;
+    overflow: scroll;
+    gap:2rem;
+}
+
+.player-order-title{
+    margin-top:10rem;
+}
+
+.listing-player{
+    margin-top:10rem;
+}
+
 .batting-roster-btn{
     width: 12rem;
 }

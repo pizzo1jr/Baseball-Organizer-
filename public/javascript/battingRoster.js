@@ -1,5 +1,6 @@
 const playerListGroup = document.querySelector('.list-group');
 
+
 async function battingRosterFormHandler(event){
 
    event.preventDefault();
@@ -20,6 +21,7 @@ async function battingRosterFormHandler(event){
 
    const playerData = await response.json();
    // create list elements and append them accordingly
+   playerListGroup.textContent = '';
    for (let i=0;i<playerData.length-1;i++){
       const playerListEle = document.createElement('li');
       playerListEle.classList.add('list-group-item');
